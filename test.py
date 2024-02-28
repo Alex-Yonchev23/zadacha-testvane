@@ -1,5 +1,4 @@
-# test.py
-
+# test_calculator.py
 import unittest
 from calculator import Calculator
 
@@ -16,3 +15,10 @@ class TestCalculator(unittest.TestCase):
 
     def test_division(self):
         self.assertEqual(Calculator.divide(6, 2), 3)
+
+    def test_division_by_zero(self):
+        with self.assertRaises(ValueError):
+            Calculator.divide(6, 0)
+
+if __name__ == "__main__":
+    unittest.main()
